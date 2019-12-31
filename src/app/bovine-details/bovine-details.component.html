@@ -1,0 +1,30 @@
+<h2>Bovine Details</h2>
+
+<hr/>
+<div *ngIf="bovine">
+    <div>
+        <label><b>Bovine Id</b></label> {{ bovine.id}}
+    </div>
+    <div>
+        <label><b>Moved From: </b></label> {{bovine.movedFrom}}
+    </div>
+    <div>
+        <label><b>Moved To: </b></label> {{bovine.movedTo}}
+    </div>
+    <div>
+        <label><b>Third Party: </b></label> {{bovine.thirdParty}}
+    </div>
+    <div>
+        <label><b>Tag Number: </b></label> {{bovine.tagNumber}}
+    </div>
+    <div>
+        <label><b>Health Certificate Number: </b></label> {{bovine.healthCertNo}}
+    </div>
+    <div>
+        <label><b>Province Movement System: </b></label> {{bovine.provinceMovementSystem}}
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Bovine List</button><br>

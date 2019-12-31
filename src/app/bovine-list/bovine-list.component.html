@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Bovine List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Bovine Id</th>
+                    <th>Moved From</th>
+                    <th>Moved To</th>
+                    <th>Third Party</th>
+                    <th>Tag Number</th>
+                    <th>Health Certificate Number</th>
+                    <th>Province Movement System</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bovine of bovine | async">
+                    <td>{{bovine.id}}</td>
+                    <td>{{bovine.movedFrom}}</td>
+                    <td>{{bovine.movedTo}}</td>
+                    <td>{{bovine.thirdParty}}</td>
+                    <td>{{bovine.healthCertNo}}</td>
+                    <td>{{bovine.provinceMovementSystem}}</td>
+                    <td><button (click)="deleteBovine(bovine.id)" class="btn btn-danger">Delete</button>
+                        <button (click)="updateBovine(bovine.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+                        <button (click)="bovineDetails(bovine.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

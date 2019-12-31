@@ -1,0 +1,47 @@
+<h3>Find By Id</h3>
+<div style="width: 300px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Id</label>
+            <input type="number" class="form-control" id="id" required [(ngModel)]="id" name="id">
+        </div>
+        <!-- <div class="form-group">
+            <label for="name">Moved From</label>
+            <input type="text" class="form-control" id="movedFrom" required [(ngModel)]="movedFrom" name="movedFrom">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Moved To</label>
+            <input type="text" class="form-control" id="movedTo" required [(ngModel)]="movedTo" name="movedTo">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Third Party</label>
+            <input type="text" class="form-control" id="thirdParty" required [(ngModel)]="thirdParty" name="thirdParty">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Tag Number</label>
+            <input type="text" class="form-control" id="tagNumber" required [(ngModel)]="tagNumber" name="tagNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Health Certificate Number</label>
+            <input type="text" class="form-control" id="healthCertNo" required [(ngModel)]="healthCertNo" name="healthCertNo">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Province Movement System</label>
+            <input type="text" class="form-control" id="provinceMovementSystem" required [(ngModel)]="provinceMovementSystem" name="provinceMovementSystem">
+        </div> -->
+
+        <div class="btn-group">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </form>
+</div>
+<ul>
+    <li *ngFor="let bovine of bovine">
+        <h4>{{bovine.id}} - {{bovine.movedFrom}} {{bovine.movedTo}}</h4>
+    </li>
+</ul>
