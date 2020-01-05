@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BovineService {
 
-  private baseUrl = 'http://localhost:8080/aim/api/v1/bovine';
+  private baseUrl = 'http://localhost:8080/api/v1/bovine';
 
   constructor(private http: HttpClient) { }
 
@@ -33,8 +33,11 @@ export class BovineService {
     return this.http.get(`${this.baseUrl}`);
   }
 
-  getBovineById(id: number): Observable<any> {
+  getBovineById(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/id/${id}`);
   }
 
+  getBovineByTagNumber(tagNumber: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/tagnumber/${tagNumber}`);
+  }
 }
