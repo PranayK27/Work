@@ -1,47 +1,85 @@
-<h3>Find By Id</h3>
+<h3>Search Bovine</h3>
 <div style="width: 300px;">
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="searchForm">
         <div class="form-group">
             <label for="name">Id</label>
-            <input type="number" class="form-control" id="id" required [(ngModel)]="id" name="id">
+            <input type="number" class="form-control" id="id" name="id">
         </div>
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label for="name">Moved From</label>
-            <input type="text" class="form-control" id="movedFrom" required [(ngModel)]="movedFrom" name="movedFrom">
+            <input type="text" class="form-control" id="movedFrom" name="movedFrom">
         </div>
 
         <div class="form-group">
             <label for="name">Moved To</label>
-            <input type="text" class="form-control" id="movedTo" required [(ngModel)]="movedTo" name="movedTo">
+            <input type="text" class="form-control" id="movedTo" name="movedTo">
         </div>
 
         <div class="form-group">
             <label for="name">Third Party</label>
-            <input type="text" class="form-control" id="thirdParty" required [(ngModel)]="thirdParty" name="thirdParty">
+            <input type="text" class="form-control" id="thirdParty" name="thirdParty">
         </div>
 
         <div class="form-group">
             <label for="name">Tag Number</label>
-            <input type="text" class="form-control" id="tagNumber" required [(ngModel)]="tagNumber" name="tagNumber">
+            <input type="text" class="form-control" id="tagNumber" name="tagNumber">
         </div>
 
         <div class="form-group">
             <label for="name">Health Certificate Number</label>
-            <input type="text" class="form-control" id="healthCertNo" required [(ngModel)]="healthCertNo" name="healthCertNo">
+            <input type="text" class="form-control" id="healthCertNo" name="healthCertNo">
+        </div>
+
+        <div class="form-group">
+            <label for="name"> From Date</label>
+            <input type="text" class="form-control" id="fromDate" name="formDate">
+        </div>
+
+        <div class="form-group">
+            <label for="name"> From Date</label>
+            <input type="text" class="form-control" id="fromDate" name="formDate">
         </div>
 
         <div class="form-group">
             <label for="name">Province Movement System</label>
-            <input type="text" class="form-control" id="provinceMovementSystem" required [(ngModel)]="provinceMovementSystem" name="provinceMovementSystem">
+            <input type="text" class="form-control" id="provinceMovementSystem" name="provinceMovementSystem">
+        </div>
+
+        <!-- <div class="btn-group">
+            <button type="submit" class="btn btn-success">Submit</button>
         </div> -->
 
-        <div class="btn-group">
-            <button type="submit" class="btn btn-success">Submit</button>
+        <!-- Button -->
+        <div class="form-group align-bottom search-button-div">
+            <button class="brn action-btn" (click)="searchBovine()">Search</button>
         </div>
     </form>
+    <!-- <app-search-bovine **ngIf="searchCriteria"></app-search-bovine> -->
 </div>
-<ul>
-    <li *ngFor="let bovine of bovine">
-        <h4>{{bovine.id}} - {{bovine.movedFrom}} {{bovine.movedTo}}</h4>
-    </li>
-</ul>
+<div class="panel-body">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Bovine Id</th>
+                <th>Moved From</th>
+                <th>Moved To</th>
+                <th>Third Party</th>
+                <th>Tag Number</th>
+                <th>Health Certificate Number</th>
+                <th>Province Movement System</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bovin of bovine | async">
+                <td>{{bovine.id}}</td>
+                <td>{{bovine.movedFrom}}</td>
+                <td>{{bovine.movedTo}}</td>
+                <td>{{bovine.thirdParty}}</td>
+                <td>{{bovine.healthCertNo}}</td>
+                <td>{{bovine.provinceMovementSystem}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- [diabled]="isFormInvalid()" -->
+
